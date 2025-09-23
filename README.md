@@ -1,12 +1,6 @@
 # README.md
 
-## 🎥 Video Explanation
-FastAPI Lab – Wine Classifier
-
-## ✍️ Blog
-FastAPI Lab-1: Serving a Wine Classifier API
-
----
+**FastAPI Lab – Wine Classifier API**
 
 ## 🔎 Overview
 
@@ -23,10 +17,11 @@ In this Lab, we will learn how to expose ML models as APIs using **FastAPI** and
 
 ---
 
-## ⚙️ Setting up the lab
+## ⚙️ Setting up the Lab
 
 1. Create a virtual environment (e.g., `wine_fastapi_env`).  
 2. Activate the environment and install the required packages:
+
    ```bash
    pip install -r requirements.txt
 
@@ -46,17 +41,18 @@ mlops_labs
     ├── README.md
     └── requirements.txt
 
+
 ## Running the Lab
-# Step 1. Train the Random Forest model
+### Step 1. Train the Random Forest model
 From the project root:
 uvicorn src.main:app --reload
 Then go to Swagger UI and hit POST /train.
 
-# Step 2. Serving the API
+### Step 2. Serving the API
 The FastAPI app runs automatically on:
 http://127.0.0.1:8000/docs
 
-# Step 3. Testing endpoints
+### Step 3. Testing endpoints
 GET /features → Shows feature names and class names.
 POST /train → Trains the Random Forest model.
 GET /metrics → Shows accuracy and metadata.
@@ -91,6 +87,9 @@ Uvicorn (ASGI server)
 | **Endpoints**   | `/train`, `/predict`, `/metrics`| `/train`, `/predict`, `/predict/params`, `/features`, `/metrics` |
 | **Output**      | Iris flower class label         | Wine class label + probabilities   |
 
+
+By
+**Samruddhi Bansod**
 ## Created By
 **Samruddhi Bansod**  
 Northeastern University 
