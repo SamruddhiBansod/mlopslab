@@ -26,20 +26,23 @@ In this Lab, we will learn how to expose ML models as APIs using **FastAPI** and
    pip install -r requirements.txt
 
 ## 📂 Project Structure
-mlops_labs
-└── fastapi_lab1
-    ├── assets/                 
-    ├── wine_fastapi_env/       
-    ├── models/                 
-    │   └── wine_rf.joblib
-    ├── src/
-    │   ├── __init__.py
-    │   ├── data.py
-    │   ├── main.py
-    │   ├── predict.py
-    │   └── train.py
-    ├── README.md
-    └── requirements.txt
+FastAPI
+├── assets/ 
+│ ├── health.png
+│ ├── predict.png
+│ └── train.png
+├── models/ 
+│ ├── metrics.joblib
+│ └── wine_rf.joblib
+├── src/
+│ ├── init.py
+│ ├── data.py
+│ ├── main.py
+│ ├── predict.py
+│ └── train.py
+├── .gitignore
+├── README.md
+└── requirements.txt
 
 
 ## Running the Lab
@@ -53,13 +56,14 @@ The FastAPI app runs automatically on:
 http://127.0.0.1:8000/docs
 
 ### Step 3. Testing endpoints
-GET /features → Shows feature names and class names.
-POST /train → Trains the Random Forest model.
-GET /metrics → Shows accuracy and metadata.
-POST /predict → Predict by sending either:
-A list of 13 floats
-A dict keyed by feature names
-POST /predict/params → Manually input 13 values via Swagger UI fields.
+
+- **GET /features** → Shows feature names and class names.  
+- **POST /train** → Trains the Random Forest model.  
+- **GET /metrics** → Shows accuracy and metadata.  
+- **POST /predict** → Predict by sending either:  
+  - A list of 13 floats  
+  - A dict keyed by feature names  
+- **POST /predict/params** → Manually input 13 values via Swagger UI fields.  
 
 
 ## 📸 API Screenshots
@@ -74,13 +78,13 @@ POST /predict/params → Manually input 13 values via Swagger UI fields.
 ![](assests/health.png)
 
 ## 🛠 Tech Stack
-FastAPI (API framework)
-scikit-learn (ML model)
-Uvicorn (ASGI server)
+- FastAPI (API framework)
+- scikit-learn (ML model)
+- Uvicorn (ASGI server)
 
 ## 🔄 Comparison: Professor’s FastAPI Lab vs. My WineFastAPI Lab
 
-| Aspect          | Professor’s Lab (Original)      | My Lab (Modified)                  |
+| Aspect          | Professor’s Lab                 | My Lab                             |
 |-----------------|---------------------------------|------------------------------------|
 | **Dataset**     | Iris dataset (4 features)       | Wine dataset (13 features)         |
 | **Algorithm**   | Decision Tree Classifier        | Random Forest Classifier           |
@@ -88,6 +92,6 @@ Uvicorn (ASGI server)
 | **Output**      | Iris flower class label         | Wine class label + probabilities   |
 
 
-#### Created ByBy
+#### Created By
 **Samruddhi Bansod**  
 Northeastern University 
