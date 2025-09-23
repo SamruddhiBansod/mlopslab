@@ -28,9 +28,9 @@ In this Lab, we will learn how to expose ML models as APIs using **FastAPI** and
 ## 📂 Project Structure
 mlops_labs
 └── fastapi_lab1
-    ├── assets/                 # optional screenshots/docs
-    ├── wine_fastapi_env/       # virtual environment (not pushed to GitHub)
-    ├── models/                 # trained models stored here
+    ├── assets/                 
+    ├── wine_fastapi_env/       
+    ├── models/                 
     │   └── wine_rf.joblib
     ├── src/
     │   ├── __init__.py
@@ -65,13 +65,13 @@ POST /predict/params → Manually input 13 values via Swagger UI fields.
 ## 📸 API Screenshots
 
 ### 🔹 Train Endpoint
-![](assets/train.png)
+![](assests/train.png)
 
 ### 🔹 Predict Endpoint
-![](assets/predict.png)
+![](assests/predict.png)
 
 ### 🔹 Health Check
-![](assets/health.png)
+![](assests/health.png)
 
 ## 🛠 Tech Stack
 FastAPI (API framework)
@@ -88,8 +88,6 @@ Uvicorn (ASGI server)
 | **Output**      | Iris flower class label         | Wine class label + probabilities   |
 
 
-By
-**Samruddhi Bansod**
-## Created By
+#### Created ByBy
 **Samruddhi Bansod**  
 Northeastern University 
