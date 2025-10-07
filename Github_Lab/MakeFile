@@ -1,0 +1,23 @@
+# Use from the Github_Lab directory:
+#   make install
+#   make test
+#   make pytest
+#   make unittest
+#   make run
+
+PYTHON := python
+
+install:
+	$(PYTHON) -m pip install --upgrade pip
+	$(PYTHON) -m pip install -r requirements.txt
+
+pytest:
+	$(PYTHON) -m pytest -q test
+
+unittest:
+	$(PYTHON) -m unittest discover -s test -p "test_unittest.py" -v
+
+test: pytest unittest
+
+run:
+	$(PYTHON) src/lab2.py
