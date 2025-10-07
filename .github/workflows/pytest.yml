@@ -9,6 +9,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,7 +17,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.8"
+          python-version: "3.8"   # use 3.11 if you prefer
 
       - name: Install dependencies
         working-directory: Github_Lab
@@ -32,13 +33,13 @@ jobs:
       - name: Upload Pytest Report
         uses: actions/upload-artifact@v4
         with:
-          name: test-results
+          name: pytest-results
           path: Github_Lab/pytest-report.xml
 
       - name: Tests passed successfully
         if: success()
-        run: echo "Tests passed successfully ✅"
+        run: echo "Pytest passed successfully ✅"
 
       - name: Tests failed
         if: failure()
-        run: echo "Tests failed ❌"
+        run: echo "Pytest failed ❌"
