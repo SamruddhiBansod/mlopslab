@@ -60,8 +60,8 @@ make install     # install dependencies
 make test        # run both suites
 make pytest      # run only pytest
 make unittest    # run only unittest
+```
 
-## 🧩 How This Repo Differs from the Professor’s
 ## 🧩 How This Repo Differs from the Professor’s
 
 | **Feature** | **Professor’s Repository** | **This Implementation** |
