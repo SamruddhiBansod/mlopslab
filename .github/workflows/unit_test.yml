@@ -1,0 +1,44 @@
+name: Python Unittests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      # Set up Python 3.8 (as requested)
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.8"
+
+      # Install dependencies from your lab folder
+      - name: Install dependencies
+        working-directory: Github_Lab
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      # Run unittest suite from your lab's test folder
+      - name: Run Unittests
+        working-directory: Github_Lab
+        run: |
+          python -m unittest discover -s test -p "test_unittest.py" -v
+
+      # Notify success/failure
+      - name: Unit tests passed successfully
+        if: success()
+        run: echo "Unit tests passed successfully ✅"
+
+      - name: Unit tests failed
+        if: failure()
+        run: echo "Unit tests failed ❌"
