@@ -10,11 +10,11 @@ The model predicts the **category of a news text snippet**, containerized using 
 
 ### ✅ Health Check Endpoint
 The `/health` endpoint returns a simple status to confirm the API is running.
-![Health Endpoint](news_health.png)
+![Health Endpoint](statistics/news_health.png)
 
 ### 🧠 Prediction UI
 The `/predict` page allows you to enter any text and get the predicted news category.
-![Prediction UI](news_predict.png)
+![Prediction UI](statistics/news_predict.png)
 
 ---
 
@@ -103,3 +103,4 @@ git push
 
 👩‍💻 Samruddhi Bansod
 📍 Northeastern University — MLOps Lab
+
