@@ -1,0 +1,41 @@
+<!-- src/templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>News Category Classifier</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
+    h1 { margin-bottom: 0.25rem; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 1rem; }
+    textarea { width: 100%; min-height: 160px; padding: 0.75rem; font-size: 1rem; }
+    button { padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid #ccc; cursor: pointer; }
+    .result { margin-top: 1rem; padding: 0.75rem; border-radius: 8px; background: #f7f7f7; }
+    .hint { color: #666; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <h1>📰 News Classification</h1>
+  <p class="hint">Paste a snippet of news text and click <strong>Predict</strong>.</p>
+
+  <div class="card">
+    <form action="/predict" method="post">
+      <label for="news_text"><strong>News Text</strong></label><br />
+      <textarea id="news_text" name="news_text" placeholder="e.g., The new GPU launch introduces improved ray tracing and DLSS features..."></textarea>
+      <br /><br />
+      <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+      <div class="result">
+        <strong>{{ prediction }}</strong>
+      </div>
+    {% endif %}
+  </div>
+
+  <p class="hint" style="margin-top:1rem;">
+    Health check: <a href="/health">/health</a>
+  </p>
+</body>
+</html>

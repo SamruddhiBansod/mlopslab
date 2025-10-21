@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+
+# Models
+*.pkl
+
+# OS
+.DS_Store
+
+# Docker
+*.log
+
+# Others
+.env
